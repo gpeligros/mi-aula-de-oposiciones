@@ -3,7 +3,9 @@
 
 Salidas:
   src/data/cuadernos.generado.json   -> datos que usa la web si no hay Supabase
-  supabase/seed/01_catalogo.sql      -> carga de datos en el esquema aula
+  supabase/seed/01_catalogo.sql      -> carga del catálogo en el esquema aula
+  supabase/seed/02_contenidos.sql    -> texto completo de cada tema (solo con sesión)
+                                        OJO: si se vuelve a cargar el 01, hay que cargar después el 02
 
 Uso: python3 scripts/generar_catalogo.py CARPETA_JSON CARPETA_PDF
 """
@@ -57,7 +59,7 @@ def q(v):
 
 def main():
     dj, dp = Path(sys.argv[1]), Path(sys.argv[2])
-    cuadernos, temas = [], []
+    cuadernos, temas, contenidos = [], [], []
     for orden, (slug, fj, fp, tipo) in enumerate(CUADERNOS, 1):
         b = json.loads((dj / fj).read_text(encoding="utf-8"))
         ts = b["temas"]
@@ -69,6 +71,7 @@ def main():
         }
         cuadernos.append(c)
         for n, t in enumerate(ts, 1):
+            contenidos.append((slug, n, {k: v for k, v in t.items() if k != "aprender"}))
             temas.append({
                 "cuaderno": slug, "orden": n, "titulo": t["titulo"], "corto": t["corto"],
                 "aprender": t.get("aprender", []), "numPreguntas": len(t["test"]),
@@ -97,7 +100,14 @@ def main():
                    f"num_supuestos = {sum(c['numSupuestos'] for c in cs)}, actualizado = {q(ACTUALIZADO)}, material = 'disponible' where slug = {q(op)};")
     sql.append("commit;")
     (RAIZ / "supabase/seed/01_catalogo.sql").write_text("\n".join(sql) + "\n", encoding="utf-8")
-    print(len(cuadernos), "cuadernos,", len(temas), "temas")
+
+    sql = ["-- Texto completo de los temas (generado por scripts/generar_catalogo.py). Se puede ejecutar varias veces.",
+           "-- Ejecutar DESPUÉS de 01_catalogo.sql.", "begin;", "delete from aula.contenidos_tema;"]
+    for slug, n, cont in contenidos:
+        sql.append(f"insert into aula.contenidos_tema (cuaderno_slug, orden, contenido, actualizado) values ({q(slug)}, {n}, {q(cont)}, {q(ACTUALIZADO)});")
+    sql.append("commit;")
+    (RAIZ / "supabase/seed/02_contenidos.sql").write_text("\n".join(sql) + "\n", encoding="utf-8")
+    print(len(cuadernos), "cuadernos,", len(temas), "temas,", len(contenidos), "contenidos")
 
 
 if __name__ == "__main__":

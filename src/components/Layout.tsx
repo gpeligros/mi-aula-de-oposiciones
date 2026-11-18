@@ -6,6 +6,7 @@ import { Logo } from "@/components/Logo";
 import { ThemeToggle } from "@/components/ThemeToggle";
 import { CookieBanner, abrirPreferenciasCookies } from "@/components/CookieBanner";
 import { cn } from "@/lib/utils";
+import { useSesion } from "@/lib/sesion";
 
 const nav = [
   { to: "/oposiciones", label: "Oposiciones" },
@@ -18,6 +19,7 @@ const nav = [
 function Header() {
   const [abierto, setAbierto] = useState(false);
   const { pathname } = useLocation();
+  const { sesion, salir } = useSesion();
   useEffect(() => setAbierto(false), [pathname]);
 
   const enlace = ({ isActive }: { isActive: boolean }) =>
@@ -36,8 +38,17 @@ function Header() {
         </nav>
         <div className="hidden items-center gap-2 md:flex">
           <ThemeToggle />
-          <Button asChild variant="ghost"><Link to="/entrar">Entrar</Link></Button>
-          <Button asChild><Link to="/entrar">Empieza gratis</Link></Button>
+          {sesion ? (
+            <>
+              <Button asChild variant="ghost"><Link to="/entrar">Mi cuenta</Link></Button>
+              <Button variant="outline" onClick={() => salir()}>Salir</Button>
+            </>
+          ) : (
+            <>
+              <Button asChild variant="ghost"><Link to="/entrar">Entrar</Link></Button>
+              <Button asChild><Link to="/entrar?modo=registro">Empieza gratis</Link></Button>
+            </>
+          )}
         </div>
         <div className="flex items-center md:hidden">
           <ThemeToggle />
@@ -53,8 +64,17 @@ function Header() {
               <li key={n.to}><NavLink to={n.to} className={({ isActive }) => cn(enlace({ isActive }), "block py-3 text-base")}>{n.label}</NavLink></li>
             ))}
             <li className="mt-2 grid grid-cols-2 gap-2">
-              <Button asChild variant="outline"><Link to="/entrar">Entrar</Link></Button>
-              <Button asChild><Link to="/entrar">Empieza gratis</Link></Button>
+              {sesion ? (
+                <>
+                  <Button asChild variant="outline"><Link to="/entrar">Mi cuenta</Link></Button>
+                  <Button variant="outline" onClick={() => salir()}>Salir</Button>
+                </>
+              ) : (
+                <>
+                  <Button asChild variant="outline"><Link to="/entrar">Entrar</Link></Button>
+                  <Button asChild><Link to="/entrar?modo=registro">Empieza gratis</Link></Button>
+                </>
+              )}
             </li>
           </ul>
         </nav>

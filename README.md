@@ -26,3 +26,10 @@ Si no hay Supabase configurado o no responde, usa los datos de `src/data` (plan 
 - `.env.example`: copia a `.env` y pon la URL y la clave **anon** del Supabase del MiniPC. El `.env` no se sube a GitHub.
 
 Requisito en el servidor: el esquema `aula` debe estar en `PGRST_DB_SCHEMAS` del `.env` de Supabase.
+
+## Registro y lector de temas (18/11/2026)
+- **Registro**: correo y contraseña con Supabase Auth (`/entrar`). En el MiniPC, durante la beta, sin correo de confirmación (`ENABLE_EMAIL_AUTOCONFIRM=true` en el `.env` de Supabase).
+- **Lector**: `/cuadernos/:slug/tema/:orden` con pestañas (lo básico, a fondo, repaso, trampas, supuesto y test interactivo con nota).
+- `supabase/migrations/20261118_02_contenidos.sql`: tabla `aula.contenidos_tema`. **Solo la leen usuarios con sesión** (RLS); el anónimo no tiene permiso.
+- `supabase/seed/02_contenidos.sql`: el texto completo de los 51 temas (unos 1,5 MB). **Cárgalo siempre después del 01**, porque el 01 borra los cuadernos y con ellos sus contenidos.
+- Sin Supabase (Vercel en la beta) el lector muestra "disponible muy pronto" y no se publica el contenido.

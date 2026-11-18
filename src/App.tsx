@@ -10,11 +10,14 @@ import Entrar from "@/pages/Entrar";
 import NotFound from "@/pages/NotFound";
 import Cuadernos from "@/pages/Cuadernos";
 import CuadernoDetalle from "@/pages/CuadernoDetalle";
+import TemaLector from "@/pages/TemaLector";
+import { SesionProvider } from "@/lib/sesion";
 import { CatalogoProvider } from "@/data/useCatalogo";
 import { AvisoLegal, Cookies, Privacidad } from "@/pages/Legal";
 
 export default function App() {
   return (
+    <SesionProvider>
     <CatalogoProvider>
     <BrowserRouter>
       <Routes>
@@ -24,6 +27,7 @@ export default function App() {
           <Route path="/oposiciones/:slug" element={<OposicionDetalle />} />
           <Route path="/cuadernos" element={<Cuadernos />} />
           <Route path="/cuadernos/:slug" element={<CuadernoDetalle />} />
+          <Route path="/cuadernos/:slug/tema/:orden" element={<TemaLector />} />
           <Route path="/metodo" element={<Metodo />} />
           <Route path="/recursos" element={<Recursos />} />
           <Route path="/planes" element={<Planes />} />
@@ -36,5 +40,6 @@ export default function App() {
       </Routes>
     </BrowserRouter>
     </CatalogoProvider>
+    </SesionProvider>
   );
 }

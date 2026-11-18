@@ -1,5 +1,6 @@
 import { Link, useParams } from "react-router-dom";
-import { ArrowLeft, ArrowRight, Check } from "lucide-react";
+import { ArrowLeft, ArrowRight, BookOpen, Check } from "lucide-react";
+import { useSesion } from "@/lib/sesion";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -11,6 +12,7 @@ import NotFound from "@/pages/NotFound";
 export default function CuadernoDetalle() {
   const { slug } = useParams();
   const { cuadernos, temas, oposiciones, cargando } = useCatalogo();
+  const { disponible, sesion } = useSesion();
   const c = cuadernos.find((x) => x.slug === slug);
   useTitulo(c?.titulo ?? "Cuaderno");
   if (!c) return cargando ? <p className="container py-16 text-muted-foreground">Cargando…</p> : <NotFound />;
@@ -64,6 +66,11 @@ export default function CuadernoDetalle() {
                       {t.aprender.map((a) => <li key={a}>{a}</li>)}
                     </ul>
                     <p className="mt-3 text-xs text-muted-foreground">{t.numPreguntas} {psico ? "ejercicios" : "preguntas de test"} · {t.incluye}</p>
+                    {disponible && (
+                      <Button asChild size="sm" className="mt-4">
+                        <Link to={`/cuadernos/${c.slug}/tema/${t.orden}`}><BookOpen aria-hidden /> {sesion ? "Estudiar este tema" : "Ver el tema (con registro gratis)"}</Link>
+                      </Button>
+                    )}
                   </AccordionContent>
                 </AccordionItem>
               ))}
@@ -91,7 +98,11 @@ export default function CuadernoDetalle() {
               <div><dt className="text-muted-foreground">Páginas</dt><dd className="font-semibold">{c.paginas ?? "—"}</dd></div>
             </dl>
             <p className="text-xs text-muted-foreground">Actualizado: {c.actualizado ?? "pendiente"}</p>
-            <Button asChild className="w-full"><Link to="/entrar">Regístrate gratis para acceder <ArrowRight /></Link></Button>
+            {sesion && lista[0] ? (
+              <Button asChild className="w-full"><Link to={`/cuadernos/${c.slug}/tema/${lista[0].orden}`}>Empezar por el {psico ? "tipo" : "tema"} 1 <ArrowRight /></Link></Button>
+            ) : (
+              <Button asChild className="w-full"><Link to={`/entrar?modo=registro&volver=/cuadernos/${c.slug}`}>Regístrate gratis para acceder <ArrowRight /></Link></Button>
+            )}
             <p className="text-xs text-muted-foreground">Durante la beta el acceso es gratuito con registro.</p>
           </div>
         </aside>
