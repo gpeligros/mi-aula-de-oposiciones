@@ -6,14 +6,17 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Cabecera } from "@/components/Cabecera";
 import { AvisoEjemplo } from "@/components/AvisoEjemplo";
 import { useTitulo } from "@/lib/useTitulo";
-import { etiquetaAmbito, etiquetaEstado, etiquetaMaterial, oposiciones } from "@/data/catalogo";
+import { etiquetaAmbito, etiquetaEstado, etiquetaMaterial } from "@/data/catalogo";
+import { useCatalogo } from "@/data/useCatalogo";
 import NotFound from "@/pages/NotFound";
 
 export default function OposicionDetalle() {
   const { slug } = useParams();
+  const { oposiciones, cuadernos, temas, cargando } = useCatalogo();
   const o = oposiciones.find((x) => x.slug === slug);
   useTitulo(o?.nombre ?? "Oposición no encontrada");
-  if (!o) return <NotFound />;
+  if (!o) return cargando ? <p className="container py-16 text-muted-foreground">Cargando…</p> : <NotFound />;
+  const susCuadernos = (o.cuadernos ?? []).map((s) => cuadernos.find((c) => c.slug === s)).filter((c) => !!c);
 
   return (
     <>
@@ -71,7 +74,33 @@ export default function OposicionDetalle() {
 
           <section aria-labelledby="temario">
             <h2 id="temario" className="text-2xl font-bold">Temario</h2>
-            {o.bloques.length ? (
+            {susCuadernos.length ? (
+              <>
+                <p className="mt-2 text-muted-foreground">Organizado en cuadernos por bloques. Cada cuaderno sirve también para otras oposiciones.</p>
+                <Accordion type="multiple" className="mt-4">
+                  {susCuadernos.map((c) => (
+                    <AccordionItem key={c.slug} value={c.slug}>
+                      <AccordionTrigger>
+                        <span className="text-left">{c.titulo} <span className="font-normal text-muted-foreground">({c.numTemas} temas)</span></span>
+                      </AccordionTrigger>
+                      <AccordionContent>
+                        <ol className="space-y-2">
+                          {temas.filter((t) => t.cuaderno === c.slug).sort((a, b) => a.orden - b.orden).map((t) => (
+                            <li key={t.orden} className="flex gap-3">
+                              <span className="w-8 shrink-0 font-semibold text-primary">{String(t.orden).padStart(2, "0")}</span>
+                              <span className="text-foreground">{t.titulo}</span>
+                            </li>
+                          ))}
+                        </ol>
+                        <Link to={`/cuadernos/${c.slug}`} className="mt-4 inline-flex items-center gap-1 text-sm text-primary underline underline-offset-4">
+                          Ver el cuaderno <ArrowRight aria-hidden className="h-4 w-4" />
+                        </Link>
+                      </AccordionContent>
+                    </AccordionItem>
+                  ))}
+                </Accordion>
+              </>
+            ) : o.bloques.length ? (
               <Accordion type="multiple" className="mt-4">
                 {o.bloques.map((b) => (
                   <AccordionItem key={b.nombre} value={b.nombre}>

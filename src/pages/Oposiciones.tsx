@@ -9,9 +9,11 @@ import { Cabecera } from "@/components/Cabecera";
 import { AvisoEjemplo } from "@/components/AvisoEjemplo";
 import { useTitulo } from "@/lib/useTitulo";
 import {
-  etiquetaAmbito, etiquetaEstado, etiquetaMaterial, familias, oposiciones,
+  etiquetaAmbito, etiquetaEstado, etiquetaMaterial,
   type Ambito, type EstadoConvocatoria, type Grupo, type Oposicion,
 } from "@/data/catalogo";
+import { useCatalogo } from "@/data/useCatalogo";
+import { TarjetaCuaderno } from "@/pages/Cuadernos";
 
 const cifra = (n: number | null) => (n === null ? "Pendiente" : n.toLocaleString("es-ES"));
 
@@ -48,6 +50,8 @@ export function TarjetaOposicion({ o }: { o: Oposicion }) {
 
 export default function Oposiciones() {
   useTitulo("Oposiciones");
+  const { familias, oposiciones, cuadernos } = useCatalogo();
+  const comunes = cuadernos.filter((c) => c.tipo === "psicotecnicos");
   const [texto, setTexto] = useState("");
   const [familia, setFamilia] = useState("");
   const [ambito, setAmbito] = useState<"" | Ambito>("");
@@ -60,7 +64,7 @@ export default function Oposiciones() {
       (!q || `${o.nombre} ${o.organismo}`.toLowerCase().includes(q)) &&
       (!familia || o.familia === familia) && (!ambito || o.ambito === ambito) &&
       (!grupo || o.grupo === grupo) && (!estado || o.estado === estado));
-  }, [texto, familia, ambito, grupo, estado]);
+  }, [oposiciones, texto, familia, ambito, grupo, estado]);
 
   const limpiar = () => { setTexto(""); setFamilia(""); setAmbito(""); setGrupo(""); setEstado(""); };
 
@@ -121,6 +125,16 @@ export default function Oposiciones() {
             <p className="mt-1 text-sm text-muted-foreground">Las familias de Administrativo y Auxiliar llegarán más adelante.</p>
             <Button variant="outline" className="mt-4" onClick={limpiar}>Quitar filtros</Button>
           </div>
+        )}
+
+        {comunes.length > 0 && (
+          <section aria-labelledby="comunes" className="mt-14">
+            <h2 id="comunes" className="text-2xl font-bold">Para muchas oposiciones</h2>
+            <p className="mt-2 text-muted-foreground">Material que no depende de una convocatoria concreta y sirve para oposiciones generales, técnicas y de seguridad.</p>
+            <div className="mt-4 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+              {comunes.map((c) => <TarjetaCuaderno key={c.slug} c={c} />)}
+            </div>
+          </section>
         )}
       </div>
     </>

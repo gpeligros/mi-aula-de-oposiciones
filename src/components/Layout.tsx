@@ -9,6 +9,7 @@ import { cn } from "@/lib/utils";
 
 const nav = [
   { to: "/oposiciones", label: "Oposiciones" },
+  { to: "/cuadernos", label: "Cuadernos" },
   { to: "/metodo", label: "Método" },
   { to: "/recursos", label: "Recursos" },
   { to: "/planes", label: "Planes" },
@@ -74,6 +75,7 @@ function Footer() {
           <h2 className="mb-3 text-sm font-semibold">Aprende</h2>
           <ul className="space-y-2 text-sm text-muted-foreground">
             <li><Link className="hover:text-primary" to="/oposiciones">Oposiciones</Link></li>
+            <li><Link className="hover:text-primary" to="/cuadernos">Cuadernos</Link></li>
             <li><Link className="hover:text-primary" to="/metodo">Método</Link></li>
             <li><Link className="hover:text-primary" to="/recursos">Recursos</Link></li>
           </ul>

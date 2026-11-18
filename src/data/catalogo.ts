@@ -51,6 +51,35 @@ export interface Oposicion {
   bloques: Bloque[];
   fuenteOficial: { texto: string; url: string };
   ejemplo: boolean;
+  /** Cuadernos (bloques reutilizables) que forman su temario, en orden de estudio */
+  cuadernos?: string[];
+}
+
+export type TipoCuaderno = "temario" | "psicotecnicos";
+
+export interface Cuaderno {
+  slug: string;
+  tipo: TipoCuaderno;
+  titulo: string;
+  subtitulo: string;
+  etiqueta: string;
+  edicion: string;
+  numTemas: number;
+  numPreguntas: number;
+  numSupuestos: number;
+  paginas: number | null;
+  actualizado: string | null; // dd/mm/aaaa
+  orden: number;
+}
+
+export interface TemaCuaderno {
+  cuaderno: string;
+  orden: number;
+  titulo: string;
+  corto: string;
+  aprender: string[];
+  numPreguntas: number;
+  incluye: string;
 }
 
 export const familias: Familia[] = [
@@ -105,7 +134,7 @@ export const oposiciones: Oposicion[] = [
     numSupuestos: null,
     actualizado: "09/11/2026",
     resumen:
-      "Plaza técnica de informática en ayuntamientos: administración de sistemas y redes, seguridad, bases de datos, virtualización y servicios web, más un temario general de derecho administrativo.",
+      "Plaza técnica de informática en ayuntamientos: administración de sistemas y redes, seguridad, bases de datos, virtualización y servicios web, más un temario general de derecho administrativo y régimen local.",
     requisitos: requisitosC1,
     formatoExamen: [
       { nombre: "Primer ejercicio", descripcion: "Test sobre el temario general y específico, normalmente con penalización por respuesta errónea." },

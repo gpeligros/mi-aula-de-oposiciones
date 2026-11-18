@@ -1,0 +1,1045 @@
+{
+ "cuadernos": [
+  {
+   "slug": "redes",
+   "tipo": "temario",
+   "titulo": "Redes y comunicaciones",
+   "subtitulo": "Administración Pública · Cuerpos técnicos de sistemas e informática",
+   "etiqueta": "Temario de informática",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 5,
+   "numPreguntas": 100,
+   "numSupuestos": 5,
+   "paginas": 103,
+   "actualizado": "2026-11-18",
+   "orden": 1
+  },
+  {
+   "slug": "seguridad",
+   "tipo": "temario",
+   "titulo": "Seguridad, ENS y auditoría",
+   "subtitulo": "Administración Pública · Cuerpos técnicos de sistemas e informática",
+   "etiqueta": "Temario de informática",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 9,
+   "numPreguntas": 180,
+   "numSupuestos": 9,
+   "paginas": 117,
+   "actualizado": "2026-11-18",
+   "orden": 2
+  },
+  {
+   "slug": "sistemas",
+   "tipo": "temario",
+   "titulo": "Sistemas operativos y mantenimiento",
+   "subtitulo": "Administración Pública · Cuerpos técnicos de sistemas e informática",
+   "etiqueta": "Temario de informática",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 7,
+   "numPreguntas": 140,
+   "numSupuestos": 7,
+   "paginas": 108,
+   "actualizado": "2026-11-18",
+   "orden": 3
+  },
+  {
+   "slug": "virtualizacion",
+   "tipo": "temario",
+   "titulo": "Virtualización, cloud y CPD",
+   "subtitulo": "Administración Pública · Cuerpos técnicos de sistemas e informática",
+   "etiqueta": "Temario de informática",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 8,
+   "numPreguntas": 160,
+   "numSupuestos": 8,
+   "paginas": 118,
+   "actualizado": "2026-11-18",
+   "orden": 4
+  },
+  {
+   "slug": "almacenamiento",
+   "tipo": "temario",
+   "titulo": "Almacenamiento, directorio y copias de seguridad",
+   "subtitulo": "Administración Pública · Cuerpos técnicos de sistemas e informática",
+   "etiqueta": "Temario de informática",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 3,
+   "numPreguntas": 60,
+   "numSupuestos": 3,
+   "paginas": 52,
+   "actualizado": "2026-11-18",
+   "orden": 5
+  },
+  {
+   "slug": "bases-de-datos",
+   "tipo": "temario",
+   "titulo": "Bases de datos",
+   "subtitulo": "Administración Pública · Cuerpos técnicos de sistemas e informática",
+   "etiqueta": "Temario de informática",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 4,
+   "numPreguntas": 80,
+   "numSupuestos": 4,
+   "paginas": 66,
+   "actualizado": "2026-11-18",
+   "orden": 6
+  },
+  {
+   "slug": "servicios-web",
+   "tipo": "temario",
+   "titulo": "Servicios web, CMS y correo",
+   "subtitulo": "Administración Pública · Cuerpos técnicos de sistemas e informática",
+   "etiqueta": "Temario de informática",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 4,
+   "numPreguntas": 80,
+   "numSupuestos": 4,
+   "paginas": 67,
+   "actualizado": "2026-11-18",
+   "orden": 7
+  },
+  {
+   "slug": "normativa-comun",
+   "tipo": "temario",
+   "titulo": "Normativa común: Constitución, Ley 39/2015 y Ley 40/2015",
+   "subtitulo": "Administración Pública · Normativa para cuerpos generales y técnicos",
+   "etiqueta": "Temario común · Derecho",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 4,
+   "numPreguntas": 80,
+   "numSupuestos": 4,
+   "paginas": 59,
+   "actualizado": "2026-11-18",
+   "orden": 8
+  },
+  {
+   "slug": "regimen-local",
+   "tipo": "temario",
+   "titulo": "Régimen local: municipio, organización y municipios de gran población",
+   "subtitulo": "Administración Local · Cuerpos generales y técnicos de ayuntamientos",
+   "etiqueta": "Temario común · Derecho",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 3,
+   "numPreguntas": 60,
+   "numSupuestos": 3,
+   "paginas": 37,
+   "actualizado": "2026-11-18",
+   "orden": 9
+  },
+  {
+   "slug": "psicotecnicos",
+   "tipo": "psicotecnicos",
+   "titulo": "Psicotécnicos para oposiciones",
+   "subtitulo": "Común a oposiciones generales, técnicas y de seguridad",
+   "etiqueta": "Psicotécnicos",
+   "edicion": "Edición 2026–2027 · Actualizado a noviembre de 2026",
+   "numTemas": 4,
+   "numPreguntas": 160,
+   "numSupuestos": 4,
+   "paginas": 57,
+   "actualizado": "2026-11-18",
+   "orden": 10
+  }
+ ],
+ "temas": [
+  {
+   "cuaderno": "redes",
+   "orden": 1,
+   "titulo": "Modelo TCP/IP: capas, protocolos, direccionamiento y enrutamiento",
+   "corto": "Modelo TCP/IP",
+   "aprender": [
+    "Modelos de referencia: OSI y TCP/IP",
+    "Encapsulación",
+    "Capa de acceso a red (enlace)",
+    "Capa Internet: IP e ICMP",
+    "Capa de transporte: TCP y UDP",
+    "Capa de aplicación: protocolos y puertos que caen",
+    "Direccionamiento IPv4",
+    "Subredes (subnetting) paso a paso",
+    "Direccionamiento IPv6 (RFC 4291)",
+    "Enrutamiento",
+    "Herramientas de diagnóstico"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "redes",
+   "orden": 2,
+   "titulo": "Redes locales y de área extensa: tipologías, medios de transmisión y dispositivos de interconexión",
+   "corto": "Redes locales y de área extensa",
+   "aprender": [
+    "Clasificación de las redes por su alcance",
+    "Topologías",
+    "Acceso al medio, colisiones y difusión",
+    "Ethernet (IEEE 802.3)",
+    "Medios de transmisión guiados (cables)",
+    "Medios no guiados (por el aire)",
+    "Cableado estructurado (ISO/IEC 11801 · EN 50173 · TIA-568)",
+    "Dispositivos de interconexión",
+    "VLAN (IEEE 802.1Q)",
+    "Redundancia en la LAN",
+    "Redes de área extensa (WAN)",
+    "Parámetros para medir una red"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "redes",
+   "orden": 3,
+   "titulo": "Administración de redes: gestión de usuarios, control de tráfico, SNMP",
+   "corto": "Administración de redes",
+   "aprender": [
+    "Qué es administrar una red: el modelo FCAPS",
+    "Gestión de usuarios: AAA",
+    "Control de tráfico",
+    "Monitorización: SNMP",
+    "Más herramientas de monitorización",
+    "Gestión de la configuración y automatización",
+    "Rendimiento y capacidad"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "redes",
+   "orden": 4,
+   "titulo": "Redes inalámbricas y su seguridad: Wi-Fi, Bluetooth y normativas asociadas",
+   "corto": "Redes inalámbricas",
+   "aprender": [
+    "Clasificación de las redes inalámbricas",
+    "Estándares IEEE 802.11 (Wi-Fi)",
+    "Arquitectura y funcionamiento de una WLAN",
+    "Bluetooth",
+    "Seguridad Wi-Fi: los protocolos",
+    "Ataques a las redes Wi-Fi",
+    "Buenas prácticas en una WLAN corporativa",
+    "Normativa asociada"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "redes",
+   "orden": 5,
+   "titulo": "VoIP y telecomunicaciones: tecnologías y convergencia con redes de datos",
+   "corto": "VoIP y telecomunicaciones",
+   "aprender": [
+    "La telefonía clásica (para entender de dónde venimos)",
+    "Cómo funciona VoIP paso a paso",
+    "Códecs",
+    "Protocolos de señalización",
+    "Transporte de la voz: RTP y compañía",
+    "VoIP y NAT, numeración y WebRTC",
+    "Calidad de la voz",
+    "Cálculo del ancho de banda de una llamada",
+    "Arquitecturas de telefonía IP",
+    "Convergencia de redes",
+    "Seguridad en VoIP"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 1,
+   "titulo": "Seguridad en redes: control de accesos, cortafuegos, VPN y detección de intrusiones",
+   "corto": "Seguridad en redes",
+   "aprender": [
+    "Principios de diseño de una red segura",
+    "Control de accesos a la red",
+    "Cortafuegos",
+    "Redes privadas virtuales (VPN)",
+    "Detección y prevención de intrusiones (IDS/IPS)",
+    "Otras medidas de la red"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 2,
+   "titulo": "Seguridad en bases de datos: cifrado, control de acceso y auditoría",
+   "corto": "Seguridad en bases de datos",
+   "aprender": [
+    "Amenazas a una base de datos",
+    "Control de acceso",
+    "Cifrado",
+    "Auditoría de la base de datos",
+    "Inyección SQL y desarrollo seguro",
+    "Bastionado y disponibilidad",
+    "Bloqueo de datos (LOPDGDD art. 32)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 3,
+   "titulo": "Esquema Nacional de Seguridad (ENS): principios, medidas y cumplimiento normativo",
+   "corto": "Esquema Nacional de Seguridad",
+   "aprender": [
+    "Origen, objeto y ámbito",
+    "Los 7 principios básicos (arts. 5–11)",
+    "Los roles (arts. 11 y 13)",
+    "Política de seguridad y requisitos mínimos (art. 12)",
+    "Categorización de los sistemas (art. 40 y Anexo I)",
+    "Las medidas de seguridad (Anexo II)",
+    "Cumplimiento: Declaración de Aplicabilidad y medidas compensatorias (art. 28)",
+    "Auditoría, conformidad e informe del estado (arts. 31, 32 y 38; Anexo III)",
+    "Respuesta a incidentes (arts. 25, 33 y 34)",
+    "Desarrollo y transición",
+    "La guía CCN-STIC-883 para entidades locales"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 4,
+   "titulo": "Identificación y firma electrónica: certificados digitales, DNIe y autenticación biométrica",
+   "corto": "Identificación y firma electrónica",
+   "aprender": [
+    "El marco normativo",
+    "Criptografía de clave pública (lo justo)",
+    "Certificados electrónicos e infraestructura de clave pública (PKI)",
+    "Tipos de firma electrónica (eIDAS)",
+    "Identificación y firma de los interesados (Ley 39/2015 y RD 203/2021)",
+    "Identificación y firma de la Administración (Ley 40/2015 y RD 203/2021)",
+    "El DNI electrónico (DNIe)",
+    "Autenticación biométrica"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 5,
+   "titulo": "Auditoría informática: objetivos, técnicas y metodologías",
+   "corto": "Auditoría informática",
+   "aprender": [
+    "Objetivos de la auditoría informática",
+    "Tipos de auditoría",
+    "Principios de auditoría (ISO 19011:2018)",
+    "Las fases de una auditoría",
+    "Técnicas de auditoría",
+    "Evidencias, hallazgos y riesgo de auditoría",
+    "Metodologías y marcos de referencia",
+    "La auditoría del ENS",
+    "El auditor"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 6,
+   "titulo": "Protección de datos en la administración: normativa y herramientas",
+   "corto": "Protección de datos",
+   "aprender": [
+    "El marco normativo",
+    "Principios (art. 5 RGPD)",
+    "Bases jurídicas (art. 6 RGPD)",
+    "Información y derechos (arts. 12–22 RGPD)",
+    "Responsable, encargado y responsabilidad proactiva",
+    "Seguridad y brechas (arts. 32–34 RGPD)",
+    "EIPD y consulta previa (arts. 35–36 RGPD)",
+    "El delegado de protección de datos (arts. 37–39 RGPD; 34–37 LOPDGDD)",
+    "Particularidades de la Administración",
+    "Régimen sancionador y AEPD",
+    "Transferencias internacionales (arts. 44–49 RGPD)",
+    "Herramientas",
+    "Derechos digitales (Título X LOPDGDD, arts. 79–97)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 7,
+   "titulo": "Seguridad en el puesto de trabajo: malware, XDR, EDR y políticas de cumplimiento",
+   "corto": "Seguridad en el puesto de trabajo",
+   "aprender": [
+    "Tipos de malware",
+    "Defensa en capas del puesto",
+    "Lo que exige el ENS frente al código dañino (op.exp.6)",
+    "De antivirus a EPP, EDR y XDR",
+    "Gestión centralizada de dispositivos",
+    "Políticas de cumplimiento",
+    "Respuesta ante un incidente en un puesto (ransomware)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 8,
+   "titulo": "Centro de Operaciones para la Ciberseguridad (SOC): funciones y herramientas",
+   "corto": "Centro de operaciones de ciberseguridad (SOC)",
+   "aprender": [
+    "Qué es un SOC y por qué lo pide el ENS",
+    "Funciones de un SOC",
+    "Organización y personas",
+    "Procesos: el ciclo de gestión de incidentes",
+    "Herramientas del SOC",
+    "Métricas del SOC",
+    "Retos habituales"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "seguridad",
+   "orden": 9,
+   "titulo": "Acceso remoto seguro: VPN, teletrabajo y gestión de identidades",
+   "corto": "Acceso remoto seguro",
+   "aprender": [
+    "Riesgos del acceso remoto (NIST SP 800-46)",
+    "Tecnologías de acceso remoto",
+    "Teletrabajo en la Administración",
+    "Gestión de identidades y accesos (IAM)",
+    "Accesos privilegiados y de terceros"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "sistemas",
+   "orden": 1,
+   "titulo": "GNU/Linux: arquitectura, instalación, configuración y administración",
+   "corto": "GNU/Linux",
+   "aprender": [
+    "Historia y licencia",
+    "Arquitectura",
+    "Distribuciones",
+    "Instalación",
+    "Jerarquía de directorios (FHS 3.0)",
+    "Usuarios, grupos y permisos",
+    "Servicios y arranque con systemd",
+    "Configuración básica del servidor",
+    "Comandos de administración imprescindibles",
+    "Registros (logs)",
+    "Bastionado y seguridad según el ENS"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "sistemas",
+   "orden": 2,
+   "titulo": "Windows Server: versiones, instalación, configuración y administración",
+   "corto": "Windows Server",
+   "aprender": [
+    "Versiones de Windows Server",
+    "Ediciones y licencias (Windows Server 2025)",
+    "Instalación",
+    "Roles y características",
+    "Herramientas de administración",
+    "Almacenamiento y sistemas de ficheros",
+    "Registros (Visor de eventos)",
+    "Administración centralizada y actualizaciones",
+    "Seguridad del servidor Windows (ENS)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "sistemas",
+   "orden": 3,
+   "titulo": "Administración avanzada de servidores: monitorización del rendimiento y optimización de recursos",
+   "corto": "Administración avanzada de servidores",
+   "aprender": [
+    "Metodología: cómo se analiza el rendimiento",
+    "Los cuatro recursos y qué medir",
+    "Herramientas en Linux",
+    "Herramientas en Windows Server",
+    "Optimización de recursos",
+    "Escalabilidad y alta disponibilidad",
+    "Relación con el ENS"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "sistemas",
+   "orden": 4,
+   "titulo": "Scripting y automatización: Shell-Scripts en Linux y PowerShell en Windows",
+   "corto": "Scripting y automatización",
+   "aprender": [
+    "Shell-scripts en Linux (bash)",
+    "PowerShell en Windows (y multiplataforma)",
+    "Comparativa bash frente a PowerShell",
+    "Automatización más allá de los scripts",
+    "Relación con el ENS"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "sistemas",
+   "orden": 5,
+   "titulo": "Mantenimiento de servidores y redes: preventivo, correctivo y perfectivo",
+   "corto": "Mantenimiento de servidores y redes",
+   "aprender": [
+    "Tipos de mantenimiento",
+    "Mantenimiento preventivo de servidores y redes",
+    "Mantenimiento correctivo",
+    "Mantenimiento adaptativo, perfectivo y evolutivo",
+    "Gestión de cambios (ENS op.exp.5 e ITIL)",
+    "Indicadores de mantenimiento y disponibilidad",
+    "Mantenimiento externalizado (contratos)",
+    "Documentación del mantenimiento"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "sistemas",
+   "orden": 6,
+   "titulo": "Monitorización y gestión de capacidad en servidores y bases de datos",
+   "corto": "Monitorización y gestión de capacidad",
+   "aprender": [
+    "Monitorización: qué, cómo y con qué",
+    "Herramientas de monitorización",
+    "Gestión de la capacidad (ITIL)",
+    "Monitorización de bases de datos",
+    "Cuadros de mando e informes",
+    "Relación con el ENS"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "sistemas",
+   "orden": 7,
+   "titulo": "Gestión de inventario, licencias y actualizaciones de software",
+   "corto": "Inventario, licencias y actualizaciones",
+   "aprender": [
+    "Inventario de activos",
+    "Gestión de activos de software (SAM) e ISO/IEC 19770",
+    "Licencias de software",
+    "Gestión de actualizaciones y parches",
+    "Relación entre los tres pilares"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "virtualizacion",
+   "orden": 1,
+   "titulo": "Tecnologías actuales de ordenadores: dispositivos móviles, servidores y supercomputadores",
+   "corto": "Tecnologías actuales de ordenadores",
+   "aprender": [
+    "Componentes y tendencias comunes",
+    "Dispositivos móviles",
+    "Servidores",
+    "Supercomputadores (HPC)",
+    "Otras tecnologías actuales",
+    "Criterios para elegir equipos en la Administración"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "virtualizacion",
+   "orden": 2,
+   "titulo": "Virtualización: tipos y aplicaciones en la administración pública",
+   "corto": "Virtualización",
+   "aprender": [
+    "Fundamentos",
+    "Tipos de hipervisor",
+    "Técnicas de virtualización del procesador",
+    "Tipos de virtualización según lo que se virtualiza",
+    "Funciones habituales de una plataforma virtualizada",
+    "Ventajas e inconvenientes",
+    "Seguridad de la virtualización",
+    "Aplicaciones en la Administración pública"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "virtualizacion",
+   "orden": 3,
+   "titulo": "Cloud Computing: modelos IaaS, PaaS, SaaS y su aplicabilidad en entornos gubernamentales",
+   "corto": "Cloud computing",
+   "aprender": [
+    "Definición del NIST (SP 800-145)",
+    "Modelos de servicio",
+    "Modelos de despliegue",
+    "Ventajas y riesgos",
+    "La nube y el ENS",
+    "Protección de datos y ubicación",
+    "Contratación de servicios en la nube",
+    "Aplicabilidad en entornos gubernamentales"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "virtualizacion",
+   "orden": 4,
+   "titulo": "Centros de Procesamiento de Datos (CPD): planificación física, virtualización y consolidación de servidores",
+   "corto": "Centros de Procesamiento de Datos (CPD)",
+   "aprender": [
+    "Planificación y ubicación",
+    "Niveles de disponibilidad (Tier)",
+    "Energía eléctrica",
+    "Climatización",
+    "Protección contra incendios, agua y otros",
+    "Eficiencia energética",
+    "Virtualización y consolidación de servidores",
+    "Seguridad y continuidad del CPD según el ENS"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "virtualizacion",
+   "orden": 5,
+   "titulo": "VMware vSphere: arquitectura, administración y optimización",
+   "corto": "VMware vSphere",
+   "aprender": [
+    "Productos y situación actual",
+    "Arquitectura",
+    "Almacenamiento",
+    "Redes",
+    "Funciones de disponibilidad y movilidad",
+    "Gestión de recursos",
+    "Administración y operación",
+    "Optimización (buenas prácticas)",
+    "Seguridad (ENS)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "virtualizacion",
+   "orden": 6,
+   "titulo": "Docker y Kubernetes: contenedores y orquestación de servicios",
+   "corto": "Docker y Kubernetes",
+   "aprender": [
+    "Contenedores: fundamentos",
+    "Docker",
+    "Kubernetes: arquitectura",
+    "Objetos de Kubernetes",
+    "Versiones y distribuciones",
+    "Seguridad de contenedores (NIST SP 800-190 y CIS)",
+    "Aplicación en la Administración"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "virtualizacion",
+   "orden": 7,
+   "titulo": "Hiperconvergencia y almacenamiento definido por software",
+   "corto": "Hiperconvergencia",
+   "aprender": [
+    "Evolución de la infraestructura",
+    "Almacenamiento definido por software (SDS)",
+    "Cómo protege los datos el SDS / HCI",
+    "Arquitectura de un clúster hiperconvergente",
+    "Soluciones principales",
+    "Ventajas, inconvenientes y cuándo usar HCI",
+    "Seguridad y ENS",
+    "Cálculo de capacidad (típico de supuesto)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "virtualizacion",
+   "orden": 8,
+   "titulo": "Administración de entornos híbridos: integración de infraestructuras locales y en la nube",
+   "corto": "Entornos híbridos",
+   "aprender": [
+    "Modelos y motivaciones",
+    "Conectividad",
+    "Identidad híbrida",
+    "Gestión unificada y automatización",
+    "Migración: las \"7 R\"",
+    "Datos, copias y continuidad",
+    "Seguridad y monitorización del entorno híbrido",
+    "Gobierno y costes (FinOps)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "almacenamiento",
+   "orden": 1,
+   "titulo": "Estrategias de backup y recuperación de la información",
+   "corto": "Copias de seguridad",
+   "aprender": [
+    "Objetivos y parámetros",
+    "Tipos de copia",
+    "Rotación y retención",
+    "Regla 3-2-1 y sus variantes",
+    "Soportes y destinos de las copias",
+    "Procedimientos de copia y restauración (ENS)",
+    "Continuidad y recuperación ante desastres",
+    "Restauración y pruebas",
+    "Herramientas"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "almacenamiento",
+   "orden": 2,
+   "titulo": "Sistemas de almacenamiento SAN, NAS y DAS: gestión y administración",
+   "corto": "Almacenamiento SAN, NAS y DAS",
+   "aprender": [
+    "Comparativa DAS, NAS y SAN",
+    "Discos y tecnologías de conexión",
+    "RAID",
+    "SAN con Fibre Channel",
+    "SAN con iSCSI y NVMe-oF",
+    "NAS",
+    "Funciones comunes de las cabinas",
+    "Gestión y administración"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "almacenamiento",
+   "orden": 3,
+   "titulo": "Servicios de directorio: LDAP, OpenLDAP y Active Directory",
+   "corto": "Servicios de directorio",
+   "aprender": [
+    "Servicios de directorio y X.500",
+    "LDAP: modelos de información y nombres",
+    "LDAP: operaciones, búsquedas y seguridad",
+    "OpenLDAP",
+    "Active Directory: estructura",
+    "Usuarios, grupos y GPO",
+    "Autenticación Kerberos",
+    "Administración, copias y recuperación de AD",
+    "Seguridad del directorio (ENS)",
+    "Otras soluciones y la nube"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "bases-de-datos",
+   "orden": 1,
+   "titulo": "Modelado lógico y físico de bases de datos. Arquitectura ANSI/SPARC",
+   "corto": "Modelado de bases de datos",
+   "aprender": [
+    "Bases de datos y SGBD",
+    "Arquitectura ANSI/SPARC",
+    "Modelos de datos",
+    "Modelo conceptual: entidad-relación",
+    "Modelo lógico relacional",
+    "Transformación del modelo E/R al relacional",
+    "Modelo físico",
+    "Metodología de diseño"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "bases-de-datos",
+   "orden": 2,
+   "titulo": "Diseño, normalización y optimización de bases de datos relacionales",
+   "corto": "Diseño y normalización de bases de datos",
+   "aprender": [
+    "Objetivos del diseño y anomalías",
+    "Dependencias funcionales",
+    "Formas normales",
+    "Desnormalización",
+    "Índices",
+    "Optimización de consultas",
+    "Diseño seguro y de calidad"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "bases-de-datos",
+   "orden": 3,
+   "titulo": "SQL y PL/SQL: gestión de datos, seguridad y administración de usuarios",
+   "corto": "SQL y PL/SQL",
+   "aprender": [
+    "Historia y estándar",
+    "DDL: definición de datos",
+    "DML: consultas y manipulación",
+    "TCL: transacciones",
+    "PL/SQL",
+    "Administración de usuarios y seguridad"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "bases-de-datos",
+   "orden": 4,
+   "titulo": "Administración de sistemas de gestión de bases de datos: copias de seguridad, recuperación y resolución de conflictos",
+   "corto": "Administración de SGBD",
+   "aprender": [
+    "Funciones del DBA",
+    "Arquitectura de Oracle",
+    "Arquitectura de PostgreSQL (y otros)",
+    "Transacciones y ACID",
+    "Control de concurrencia",
+    "Copias de seguridad",
+    "Recuperación",
+    "Alta disponibilidad y replicación",
+    "Resolución de conflictos",
+    "ENS y RGPD aplicados a las bases de datos"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "servicios-web",
+   "orden": 1,
+   "titulo": "Administración de servidores web: Apache, Tomcat y Nginx",
+   "corto": "Servidores web",
+   "aprender": [
+    "El protocolo HTTP",
+    "Apache HTTP Server (httpd)",
+    "Nginx",
+    "Apache Tomcat",
+    "Arquitecturas habituales",
+    "HTTPS y certificados",
+    "Seguridad y bastionado (ENS op.exp.2, mp.s.2)",
+    "Monitorización y resolución de problemas"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "servicios-web",
+   "orden": 2,
+   "titulo": "Gestión de contenidos: CMS y gestores documentales en entornos públicos",
+   "corto": "Gestión de contenidos (CMS)",
+   "aprender": [
+    "Tipos de sistemas de gestión de contenidos",
+    "Funcionalidades de un CMS",
+    "Requisitos de la web pública",
+    "Seguridad de un CMS (ENS)",
+    "La gestión documental en la Administración",
+    "Estándares y productos de gestión documental"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "servicios-web",
+   "orden": 3,
+   "titulo": "Aplicaciones web y seguridad: estándares, interoperabilidad y servicios web",
+   "corto": "Aplicaciones web y seguridad",
+   "aprender": [
+    "Arquitectura de las aplicaciones web",
+    "Accesibilidad web (WCAG y EN 301 549)",
+    "Servicios web: SOAP y REST",
+    "Autenticación y autorización en aplicaciones y APIs",
+    "Seguridad de las aplicaciones web",
+    "Interoperabilidad en las administraciones públicas"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "servicios-web",
+   "orden": 4,
+   "titulo": "Gestión de correo electrónico en entornos corporativos",
+   "corto": "Correo electrónico corporativo",
+   "aprender": [
+    "Arquitectura y recorrido de un mensaje",
+    "Plataformas de correo corporativo",
+    "Administración del servicio",
+    "Autenticación del dominio: SPF, DKIM y DMARC",
+    "Seguridad del correo (ENS mp.s.1)",
+    "Aspectos legales y organizativos"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "normativa-comun",
+   "orden": 1,
+   "titulo": "La Ley: tipos de leyes, reserva de ley, Decreto-ley y Decreto legislativo",
+   "corto": "La ley y sus tipos",
+   "aprender": [
+    "Tipos de leyes",
+    "Reserva de ley",
+    "Disposiciones del ejecutivo con fuerza de ley"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "normativa-comun",
+   "orden": 2,
+   "titulo": "Ley 39/2015 (I): interesados, actividad de las Administraciones, plazos y requisitos de los actos",
+   "corto": "Ley 39/2015 (I)",
+   "aprender": [
+    "Los interesados (arts. 3–12)",
+    "Actividad de las AAPP (arts. 13–28)",
+    "Términos y plazos (arts. 29–33)",
+    "Requisitos de los actos (arts. 34–36)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "normativa-comun",
+   "orden": 3,
+   "titulo": "Ley 39/2015 (II): eficacia y validez de los actos, procedimiento común y revisión en vía administrativa",
+   "corto": "Ley 39/2015 (II)",
+   "aprender": [
+    "Eficacia de los actos (arts. 37–46)",
+    "Nulidad y anulabilidad (arts. 47–52)",
+    "El procedimiento administrativo común (arts. 53–105)",
+    "Revisión de los actos en vía administrativa (arts. 106–126)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "normativa-comun",
+   "orden": 4,
+   "titulo": "Ley 40/2015 (I): disposiciones generales, órganos administrativos, abstención y recusación, potestad sancionadora",
+   "corto": "Ley 40/2015 (I)",
+   "aprender": [
+    "Estructura de la ley",
+    "Disposiciones generales (arts. 1–4)",
+    "Órganos de las administraciones públicas (arts. 5–22)",
+    "Abstención y recusación (arts. 23–24)",
+    "Principios de la potestad sancionadora (arts. 25–31)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "regimen-local",
+   "orden": 1,
+   "titulo": "El municipio: territorio, población, competencias y servicios mínimos",
+   "corto": "El municipio",
+   "aprender": [
+    "El municipio y sus elementos (art. 11)",
+    "El término municipal (arts. 12–13)",
+    "La población y el padrón (arts. 15–17)",
+    "Derechos y deberes de los vecinos (art. 18)",
+    "Las competencias municipales (arts. 7 y 25)",
+    "Los servicios mínimos (art. 26)",
+    "La delegación de competencias (art. 27)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "regimen-local",
+   "orden": 2,
+   "titulo": "La organización municipal de régimen común: Alcalde, Tenientes de Alcalde, Pleno y Junta de Gobierno Local",
+   "corto": "Organización municipal de régimen común",
+   "aprender": [
+    "El ayuntamiento (art. 19)",
+    "Los órganos municipales (art. 20.1)",
+    "El Alcalde (art. 21)",
+    "Los Tenientes de Alcalde (arts. 21.2 y 23.3)",
+    "El Pleno (art. 22)",
+    "La Junta de Gobierno Local (art. 23)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "regimen-local",
+   "orden": 3,
+   "titulo": "Municipios de gran población: el Pleno, el Alcalde y la Junta de Gobierno Local (Título X de la Ley 7/1985)",
+   "corto": "Municipios de gran población",
+   "aprender": [
+    "Ámbito de aplicación (art. 121)",
+    "El Pleno (arts. 122–123)",
+    "El Alcalde (arts. 124–125)",
+    "La Junta de Gobierno Local (arts. 126–127)",
+    "Otros órganos del Título X (resumen)"
+   ],
+   "numPreguntas": 20,
+   "incluye": "Supuesto práctico"
+  },
+  {
+   "cuaderno": "psicotecnicos",
+   "orden": 1,
+   "titulo": "Aptitud verbal y ortografía: sinónimos, antónimos, analogías y ortografía",
+   "corto": "Aptitud verbal y ortografía",
+   "aprender": [
+    "Qué mide la aptitud verbal",
+    "Sinónimos y antónimos",
+    "Analogías verbales",
+    "Ortografía: b/v, h, g/j, tildes",
+    "Método para no fallar"
+   ],
+   "numPreguntas": 40,
+   "incluye": "Ejercicios resueltos"
+  },
+  {
+   "cuaderno": "psicotecnicos",
+   "orden": 2,
+   "titulo": "Aptitud numérica: series, porcentajes, regla de tres y problemas",
+   "corto": "Aptitud numérica y series",
+   "aprender": [
+    "Qué mide la aptitud numérica",
+    "Series numéricas y de letras",
+    "Porcentajes, subidas y descuentos",
+    "Regla de tres directa e inversa",
+    "Problemas de edades y velocidad",
+    "Cálculo rápido sin calculadora"
+   ],
+   "numPreguntas": 40,
+   "incluye": "Ejercicios resueltos"
+  },
+  {
+   "cuaderno": "psicotecnicos",
+   "orden": 3,
+   "titulo": "Razonamiento abstracto: series de figuras, giros, recuentos y reglas combinadas",
+   "corto": "Razonamiento abstracto",
+   "aprender": [
+    "Qué mide el razonamiento abstracto",
+    "Giros y rotaciones",
+    "Recuento de lados y elementos",
+    "Reglas combinadas",
+    "Método de análisis en 3 pasos"
+   ],
+   "numPreguntas": 40,
+   "incluye": "Ejercicios resueltos"
+  },
+  {
+   "cuaderno": "psicotecnicos",
+   "orden": 4,
+   "titulo": "Atención y aptitud administrativa: comparación de datos, recuentos, ordenación y verificación",
+   "corto": "Atención y aptitud administrativa",
+   "aprender": [
+    "Qué miden las pruebas de atención",
+    "Comparación de códigos",
+    "Recuento de símbolos",
+    "Ordenación alfabética",
+    "Verificación de datos",
+    "Método para ganar velocidad sin errores"
+   ],
+   "numPreguntas": 40,
+   "incluye": "Ejercicios resueltos"
+  }
+ ],
+ "enlaces": {
+  "analista-programador-informatica-local-c1": [
+   "normativa-comun",
+   "regimen-local",
+   "redes",
+   "seguridad",
+   "sistemas",
+   "virtualizacion",
+   "almacenamiento",
+   "bases-de-datos",
+   "servicios-web"
+  ]
+ },
+ "generado": "2026-11-18"
+}

@@ -8,16 +8,22 @@ import Recursos from "@/pages/Recursos";
 import Planes from "@/pages/Planes";
 import Entrar from "@/pages/Entrar";
 import NotFound from "@/pages/NotFound";
+import Cuadernos from "@/pages/Cuadernos";
+import CuadernoDetalle from "@/pages/CuadernoDetalle";
+import { CatalogoProvider } from "@/data/useCatalogo";
 import { AvisoLegal, Cookies, Privacidad } from "@/pages/Legal";
 
 export default function App() {
   return (
+    <CatalogoProvider>
     <BrowserRouter>
       <Routes>
         <Route element={<Layout />}>
           <Route path="/" element={<Home />} />
           <Route path="/oposiciones" element={<Oposiciones />} />
           <Route path="/oposiciones/:slug" element={<OposicionDetalle />} />
+          <Route path="/cuadernos" element={<Cuadernos />} />
+          <Route path="/cuadernos/:slug" element={<CuadernoDetalle />} />
           <Route path="/metodo" element={<Metodo />} />
           <Route path="/recursos" element={<Recursos />} />
           <Route path="/planes" element={<Planes />} />
@@ -29,5 +35,6 @@ export default function App() {
         </Route>
       </Routes>
     </BrowserRouter>
+    </CatalogoProvider>
   );
 }
