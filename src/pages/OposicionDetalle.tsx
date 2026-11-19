@@ -8,11 +8,14 @@ import { AvisoEjemplo } from "@/components/AvisoEjemplo";
 import { useTitulo } from "@/lib/useTitulo";
 import { etiquetaAmbito, etiquetaEstado, etiquetaMaterial } from "@/data/catalogo";
 import { useCatalogo } from "@/data/useCatalogo";
+import { useSesion } from "@/lib/sesion";
+import { BotonDescarga } from "@/components/BotonDescarga";
 import NotFound from "@/pages/NotFound";
 
 export default function OposicionDetalle() {
   const { slug } = useParams();
   const { oposiciones, cuadernos, temas, cargando } = useCatalogo();
+  const { sesion } = useSesion();
   const o = oposiciones.find((x) => x.slug === slug);
   useTitulo(o?.nombre ?? "Oposición no encontrada");
   if (!o) return cargando ? <p className="container py-16 text-muted-foreground">Cargando…</p> : <NotFound />;
@@ -142,7 +145,15 @@ export default function OposicionDetalle() {
               <div><dt className="text-muted-foreground">Actualizado</dt><dd className="font-semibold">{o.actualizado ?? "Pendiente"}</dd></div>
             </dl>
             {o.material === "disponible" ? (
-              <Button asChild className="w-full"><Link to="/entrar">Empezar a prepararla <ArrowRight /></Link></Button>
+              sesion && susCuadernos[0] ? (
+                <>
+                  <Button asChild className="w-full"><Link to={`/cuadernos/${susCuadernos[0].slug}`}>Empezar a prepararla <ArrowRight /></Link></Button>
+                  {o.packPdf && <BotonDescarga fichero={o.packPdf} texto="Descargar el pack completo (PDF)" />}
+                  <p className="text-xs text-muted-foreground">El pack reúne todos los cuadernos de esta oposición en un único PDF, para tu uso personal.</p>
+                </>
+              ) : (
+                <Button asChild className="w-full"><Link to={`/entrar?modo=registro&volver=/oposiciones/${o.slug}`}>Empezar a prepararla <ArrowRight /></Link></Button>
+              )
             ) : (
               <Button className="w-full" disabled>Disponible próximamente</Button>
             )}

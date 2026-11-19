@@ -53,6 +53,8 @@ export interface Oposicion {
   ejemplo: boolean;
   /** Cuadernos (bloques reutilizables) que forman su temario, en orden de estudio */
   cuadernos?: string[];
+  /** Nombre del PDF del pack completo en el cajón privado "cuadernos" (Supabase Storage) */
+  packPdf?: string | null;
 }
 
 export type TipoCuaderno = "temario" | "psicotecnicos";
@@ -70,6 +72,8 @@ export interface Cuaderno {
   paginas: number | null;
   actualizado: string | null; // dd/mm/aaaa
   orden: number;
+  /** Nombre del PDF en el cajón privado "cuadernos" (Supabase Storage) */
+  pdf?: string | null;
 }
 
 export interface TemaCuaderno {

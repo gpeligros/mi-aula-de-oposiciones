@@ -1,6 +1,7 @@
 import { Link, useParams } from "react-router-dom";
 import { ArrowLeft, ArrowRight, BookOpen, Check } from "lucide-react";
 import { useSesion } from "@/lib/sesion";
+import { BotonDescarga } from "@/components/BotonDescarga";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
@@ -99,11 +100,14 @@ export default function CuadernoDetalle() {
             </dl>
             <p className="text-xs text-muted-foreground">Actualizado: {c.actualizado ?? "pendiente"}</p>
             {sesion && lista[0] ? (
-              <Button asChild className="w-full"><Link to={`/cuadernos/${c.slug}/tema/${lista[0].orden}`}>Empezar por el {psico ? "tipo" : "tema"} 1 <ArrowRight /></Link></Button>
+              <>
+                <Button asChild className="w-full"><Link to={`/cuadernos/${c.slug}/tema/${lista[0].orden}`}>Empezar por el {psico ? "tipo" : "tema"} 1 <ArrowRight /></Link></Button>
+                {c.pdf && <BotonDescarga fichero={c.pdf} texto={`Descargar en PDF${c.paginas ? ` (${c.paginas} págs.)` : ""}`} />}
+              </>
             ) : (
               <Button asChild className="w-full"><Link to={`/entrar?modo=registro&volver=/cuadernos/${c.slug}`}>Regístrate gratis para acceder <ArrowRight /></Link></Button>
             )}
-            <p className="text-xs text-muted-foreground">Durante la beta el acceso es gratuito con registro.</p>
+            <p className="text-xs text-muted-foreground">{sesion ? "PDF para estudiar sin conexión, subrayar o imprimir. Es para tu uso personal." : "Durante la beta el acceso es gratuito con registro: temas, tests y PDF descargable."}</p>
           </div>
         </aside>
       </div>

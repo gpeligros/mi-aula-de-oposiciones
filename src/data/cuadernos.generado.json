@@ -11,6 +11,7 @@
    "numPreguntas": 100,
    "numSupuestos": 5,
    "paginas": 103,
+   "pdf": "01_Mi_Aula_Redes_y_comunicaciones.pdf",
    "actualizado": "2026-11-18",
    "orden": 1
   },
@@ -25,6 +26,7 @@
    "numPreguntas": 180,
    "numSupuestos": 9,
    "paginas": 117,
+   "pdf": "02_Mi_Aula_Seguridad_ENS_y_auditoria.pdf",
    "actualizado": "2026-11-18",
    "orden": 2
   },
@@ -39,6 +41,7 @@
    "numPreguntas": 140,
    "numSupuestos": 7,
    "paginas": 108,
+   "pdf": "03_Mi_Aula_Sistemas_operativos_y_mantenimiento.pdf",
    "actualizado": "2026-11-18",
    "orden": 3
   },
@@ -53,6 +56,7 @@
    "numPreguntas": 160,
    "numSupuestos": 8,
    "paginas": 118,
+   "pdf": "04_Mi_Aula_Virtualizacion_cloud_y_CPD.pdf",
    "actualizado": "2026-11-18",
    "orden": 4
   },
@@ -67,6 +71,7 @@
    "numPreguntas": 60,
    "numSupuestos": 3,
    "paginas": 52,
+   "pdf": "05_Mi_Aula_Almacenamiento_directorio_y_copias.pdf",
    "actualizado": "2026-11-18",
    "orden": 5
   },
@@ -81,6 +86,7 @@
    "numPreguntas": 80,
    "numSupuestos": 4,
    "paginas": 66,
+   "pdf": "06_Mi_Aula_Bases_de_datos.pdf",
    "actualizado": "2026-11-18",
    "orden": 6
   },
@@ -95,6 +101,7 @@
    "numPreguntas": 80,
    "numSupuestos": 4,
    "paginas": 67,
+   "pdf": "07_Mi_Aula_Servicios_web_CMS_y_correo.pdf",
    "actualizado": "2026-11-18",
    "orden": 7
   },
@@ -109,6 +116,7 @@
    "numPreguntas": 80,
    "numSupuestos": 4,
    "paginas": 59,
+   "pdf": "08_Mi_Aula_Normativa_comun.pdf",
    "actualizado": "2026-11-18",
    "orden": 8
   },
@@ -123,6 +131,7 @@
    "numPreguntas": 60,
    "numSupuestos": 3,
    "paginas": 37,
+   "pdf": "09_Mi_Aula_Regimen_local.pdf",
    "actualizado": "2026-11-18",
    "orden": 9
   },
@@ -137,6 +146,7 @@
    "numPreguntas": 160,
    "numSupuestos": 4,
    "paginas": 57,
+   "pdf": "10_Mi_Aula_Psicotecnicos.pdf",
    "actualizado": "2026-11-18",
    "orden": 10
   }
@@ -1040,6 +1050,9 @@
    "bases-de-datos",
    "servicios-web"
   ]
+ },
+ "packs": {
+  "analista-programador-informatica-local-c1": "00_Mi_Aula_Pack_completo_Informatica.pdf"
  },
  "generado": "2026-11-18"
 }

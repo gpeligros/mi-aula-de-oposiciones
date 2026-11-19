@@ -24,12 +24,13 @@ const fecha = (iso: string | null) => (iso ? iso.split("-").reverse().join("/") 
 function catalogoLocal(): Omit<Catalogo, "cargando"> {
   const cuadernos: Cuaderno[] = generado.cuadernos.map((c) => ({ ...c, tipo: c.tipo as Cuaderno["tipo"], actualizado: fecha(c.actualizado) }));
   const enlaces = generado.enlaces as Record<string, string[]>;
+  const packs = generado.packs as Record<string, string>;
   const oposiciones = oposicionesFijas.map((o) => {
     const lista = enlaces[o.slug];
     if (!lista) return o;
     const cs = cuadernos.filter((c) => lista.includes(c.slug));
     return {
-      ...o, cuadernos: lista, bloques: [], material: "disponible" as const,
+      ...o, cuadernos: lista, bloques: [], material: "disponible" as const, packPdf: packs[o.slug] ?? null,
       numTemas: cs.reduce((a, c) => a + c.numTemas, 0),
       numPreguntas: cs.reduce((a, c) => a + c.numPreguntas, 0),
       numSupuestos: cs.reduce((a, c) => a + c.numSupuestos, 0),
@@ -56,7 +57,7 @@ async function catalogoSupabase(): Promise<Omit<Catalogo, "cargando">> {
     cuadernos: c.data!.map((x) => ({
       slug: x.slug, tipo: x.tipo, titulo: x.titulo, subtitulo: x.subtitulo, etiqueta: x.etiqueta, edicion: x.edicion,
       numTemas: x.num_temas, numPreguntas: x.num_preguntas, numSupuestos: x.num_supuestos, paginas: x.paginas,
-      actualizado: fecha(x.actualizado), orden: x.orden,
+      actualizado: fecha(x.actualizado), orden: x.orden, pdf: x.pdf ?? null,
     })),
     temas: t.data!.map((x) => ({
       cuaderno: x.cuaderno_slug, orden: x.orden, titulo: x.titulo, corto: x.corto,
@@ -66,7 +67,7 @@ async function catalogoSupabase(): Promise<Omit<Catalogo, "cargando">> {
       slug: x.slug, familia: x.familia_slug, nombre: x.nombre, organismo: x.organismo, ambito: x.ambito, grupo: x.grupo,
       estado: x.estado, material: x.material, numTemas: x.num_temas, numPreguntas: x.num_preguntas, numSupuestos: x.num_supuestos,
       actualizado: fecha(x.actualizado), resumen: x.resumen, requisitos: x.requisitos ?? [], formatoExamen: x.formato_examen,
-      bloques: [], fuenteOficial: { texto: x.fuente_texto, url: x.fuente_url }, ejemplo: x.ejemplo,
+      bloques: [], fuenteOficial: { texto: x.fuente_texto, url: x.fuente_url }, ejemplo: x.ejemplo, packPdf: x.pack_pdf ?? null,
       cuadernos: e.data!.filter((y) => y.oposicion_slug === x.slug).map((y) => y.cuaderno_slug),
     })),
   };

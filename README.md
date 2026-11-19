@@ -33,3 +33,8 @@ Requisito en el servidor: el esquema `aula` debe estar en `PGRST_DB_SCHEMAS` del
 - `supabase/migrations/20261118_02_contenidos.sql`: tabla `aula.contenidos_tema`. **Solo la leen usuarios con sesión** (RLS); el anónimo no tiene permiso.
 - `supabase/seed/02_contenidos.sql`: el texto completo de los 51 temas (unos 1,5 MB). **Cárgalo siempre después del 01**, porque el 01 borra los cuadernos y con ellos sus contenidos.
 - Sin Supabase (Vercel en la beta) el lector muestra "disponible muy pronto" y no se publica el contenido.
+
+## PDF descargables (19/11/2026)
+- `supabase/migrations/20261119_03_pdf.sql`: crea el cajón **privado** `cuadernos` en Supabase Storage (solo PDF, máx. 20 MB). Solo descargan usuarios con sesión, con un enlace firmado que caduca en 60 s.
+- Los PDF **no se guardan en GitHub**: se suben a mano desde Studio → Storage → `cuadernos`, con su nombre original (`01_Mi_Aula_Redes_y_comunicaciones.pdf`, …, `00_Mi_Aula_Pack_completo_Informatica.pdf`).
+- Botón "Descargar en PDF" en cada cuaderno y "Descargar el pack completo" en la ficha de la oposición (solo con sesión).

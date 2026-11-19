@@ -35,6 +35,8 @@ ENLACES = {
         "virtualizacion", "almacenamiento", "bases-de-datos", "servicios-web"],
 }
 ACTUALIZADO = "2026-11-18"
+# PDF del pack completo de cada oposición (bucket privado "cuadernos" de Supabase Storage)
+PACKS = {"analista-programador-informatica-local-c1": "00_Mi_Aula_Pack_completo_Informatica.pdf"}
 
 
 def paginas(pdf):
@@ -67,7 +69,7 @@ def main():
             "slug": slug, "tipo": tipo, "titulo": b["titulo"], "subtitulo": b["subtitulo"],
             "etiqueta": b.get("etiqueta", ""), "edicion": b["edicion"],
             "numTemas": len(ts), "numPreguntas": sum(len(t["test"]) for t in ts),
-            "numSupuestos": len(ts), "paginas": paginas(dp / fp), "actualizado": ACTUALIZADO, "orden": orden,
+            "numSupuestos": len(ts), "paginas": paginas(dp / fp), "pdf": fp, "actualizado": ACTUALIZADO, "orden": orden,
         }
         cuadernos.append(c)
         for n, t in enumerate(ts, 1):
@@ -77,16 +79,16 @@ def main():
                 "aprender": t.get("aprender", []), "numPreguntas": len(t["test"]),
                 "incluye": (t.get("supuesto_banner") or ["Supuesto práctico"])[0],
             })
-    datos = {"cuadernos": cuadernos, "temas": temas, "enlaces": ENLACES, "generado": ACTUALIZADO}
+    datos = {"cuadernos": cuadernos, "temas": temas, "enlaces": ENLACES, "packs": PACKS, "generado": ACTUALIZADO}
     (RAIZ / "src/data/cuadernos.generado.json").write_text(json.dumps(datos, ensure_ascii=False, indent=1), encoding="utf-8")
 
     sql = ["-- Datos del catálogo de cuadernos (generado por scripts/generar_catalogo.py). Se puede ejecutar varias veces.",
            "begin;", "set local search_path = aula;",
            "delete from aula.oposicion_cuadernos; delete from aula.temas; delete from aula.cuadernos;"]
     for c in cuadernos:
-        sql.append("insert into aula.cuadernos (slug, tipo, titulo, subtitulo, etiqueta, edicion, num_temas, num_preguntas, num_supuestos, paginas, actualizado, orden, publicado) values ("
+        sql.append("insert into aula.cuadernos (slug, tipo, titulo, subtitulo, etiqueta, edicion, num_temas, num_preguntas, num_supuestos, paginas, pdf, actualizado, orden, publicado) values ("
                    + ", ".join(q(x) for x in [c["slug"], c["tipo"], c["titulo"], c["subtitulo"], c["etiqueta"], c["edicion"], c["numTemas"],
-                                              c["numPreguntas"], c["numSupuestos"], c["paginas"], c["actualizado"], c["orden"], True]) + ");")
+                                              c["numPreguntas"], c["numSupuestos"], c["paginas"], c["pdf"], c["actualizado"], c["orden"], True]) + ");")
     for t in temas:
         sql.append("insert into aula.temas (cuaderno_slug, orden, titulo, corto, aprender, num_preguntas, incluye) values ("
                    + ", ".join(q(x) for x in [t["cuaderno"], t["orden"], t["titulo"], t["corto"], t["aprender"], t["numPreguntas"], t["incluye"]]) + ");")
@@ -97,7 +99,7 @@ def main():
     for op, lst in ENLACES.items():
         cs = [c for c in cuadernos if c["slug"] in lst]
         sql.append(f"update aula.oposiciones set num_temas = {sum(c['numTemas'] for c in cs)}, num_preguntas = {sum(c['numPreguntas'] for c in cs)}, "
-                   f"num_supuestos = {sum(c['numSupuestos'] for c in cs)}, actualizado = {q(ACTUALIZADO)}, material = 'disponible' where slug = {q(op)};")
+                   f"num_supuestos = {sum(c['numSupuestos'] for c in cs)}, actualizado = {q(ACTUALIZADO)}, material = 'disponible', pack_pdf = {q(PACKS.get(op))} where slug = {q(op)};")
     sql.append("commit;")
     (RAIZ / "supabase/seed/01_catalogo.sql").write_text("\n".join(sql) + "\n", encoding="utf-8")
 
